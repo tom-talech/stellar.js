@@ -1,4 +1,13 @@
-;(function($, window, document, undefined) {
+;(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery'], factory);
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}
+(function ($) {
 
 	var pluginName = 'stellar',
 		defaults = {
@@ -648,4 +657,4 @@
 
 	// Expose the plugin class so it can be modified
 	window.Stellar = Plugin;
-}(jQuery, this, document));
+}));
